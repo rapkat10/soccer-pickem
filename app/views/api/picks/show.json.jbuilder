@@ -1,0 +1,1 @@
+json.partial! 'api/picks/pick', pick: @pick

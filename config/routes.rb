@@ -6,10 +6,14 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resources :users, only: [:index, :show]
     resources :teams, only: [:index, :show]
+    resources :matches, only: [:index, :show] do
+      collection do
+        get 'create_new_tournament', to: 'matches#create_new_tournament', as: 'create_new_tournament'
+        get 'play_matches', to: 'matches#play_matches', as: 'play_matches'
+      end
+    end
+    resources :picks, only: [:index, :show, :create, :update]
   end
   
   get '*path', to: 'home#index'
-  # get 'url1', action: :index, controller: 'home'
-  # get 'url2', action: :index, controller: 'home'
-  # get 'url3', action: :index, controller: 'home'
 end

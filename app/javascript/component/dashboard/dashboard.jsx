@@ -1,27 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import TeamsContainer from "../teams/teams_container";
 
 class Dashboard extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  componentDidMount() {
-    console.log("calling get teams")
-    this.props.getTeams();
-  }
-
   render() {
-    const { currentUser, teams } = this.props;
-    const firstName = currentUser.first_name;
-    if (teams.length === 0) return null; 
     return (
       <>
-        <Link to="/">Homepage</Link>
-        <div className="dashboard-div clearfix">
-          <h5>Hello From Dashboard</h5>
-          <h5>{firstName}</h5>
-          <h5>{teams[0].name}</h5>
+        <div className="dashboard-div">
+          <div className="d-flex justify-content-center">
+            <Link to="/" className='btn btn-sm btn-primary m-1'>Homepage</Link>
+            <Link to="/clubworldcup" className='btn btn-sm btn-primary m-1'>Club World Cup</Link>
+          </div>
+          <TeamsContainer />
         </div>
       </>
     );

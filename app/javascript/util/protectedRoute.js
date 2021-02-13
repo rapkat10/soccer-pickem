@@ -4,7 +4,9 @@ import { Redirect } from "react-router-dom";
 class ProtectedRoute extends React.Component {
   render() {
     const Component = this.props.component;
-    const isAuthenticated = this.props.currentUser;
+    const store = this.props.store;
+    const currentUser = store.getState().entities.user[Object.keys(store.getState().entities.user)[0]];
+    const isAuthenticated = currentUser;
     return isAuthenticated ? (
       <Component store={this.props.store} />
     ) : (

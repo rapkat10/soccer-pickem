@@ -1,0 +1,1 @@
+json.partial! 'api/matches/match', match: @match
