@@ -127,7 +127,7 @@ class Matches extends React.Component {
           <div className="d-flex justify-content-center">
             <Link to="/" className="btn btn-sm btn-primary m-1">Homepage</Link>
             <Link to="/dashboard" className="btn btn-sm btn-primary m-1">Dashboard</Link>
-            <Link to="/playedmatches" className="btn btn-sm btn-primary m-1">Previous Match results</Link>
+            <Link to="/playedmatches" className="btn btn-sm btn-primary m-1">Previous Match Picks results</Link>
           </div>
           {pickResults}
           <div className="d-flex flex-column border border-info rounded">

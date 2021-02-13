@@ -4,11 +4,12 @@ import { getPlayedMatches } from "../../actions/match_actions";
 
 const mapStateToProps = (state) => {
   const matches = Object.values(state.entities.matches);
-  return { matches };
+  const currentUser = Object.values(state.entities.user)[0];
+  return { matches, currentUser };
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  getPlayedMatches: (played_matches) => dispatch(getPlayedMatches(played_matches))
+  getPlayedMatches: (played_matches, userId) => dispatch(getPlayedMatches(played_matches, userId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PlayedMatches);

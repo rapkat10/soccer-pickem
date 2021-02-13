@@ -7,11 +7,11 @@ export const getMatches = () => {
   });
 };
 
-export const getPlayedMatches = (played_matches) => {
+export const getPlayedMatches = (played_matches, userId) => {
   return $.ajax({
     url: "api/matches",
     method: "GET",
-    data: {played_matches}
+    data: {played_matches, userId}
   });
 };
 

@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Redirect, Switch, Link } from "react-router-dom";
 import ProtectedRoute from "../util/protectedRoute";
 import DashboardContainer from "./dashboard/dashboard_container";
-import Homepage from "./home/homepage";
+import HomepageContainer from "./home/homepage_container";
 import MatchesContainer from "./matches/matches_container";
 import PlayedMatchesContainer from "./matches/played_matches_container";
 
@@ -27,7 +27,7 @@ const App = ({ store }) => (
         component={PlayedMatchesContainer}
         store={store}
       />
-      <Route path="/" component={Homepage} />
+      <Route path="/" component={HomepageContainer} />
     </Switch>
   </div>
 );

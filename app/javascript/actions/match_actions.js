@@ -24,9 +24,9 @@ export const getMatches = () => {
   };
 };
 
-export const getPlayedMatches = (played_matches) => {
+export const getPlayedMatches = (played_matches, userId) => {
   return (dispatch) => {
-    return MatchApiUtil.getPlayedMatches(played_matches).then((matches) =>
+    return MatchApiUtil.getPlayedMatches(played_matches, userId).then((matches) =>
       dispatch(receiveMatches(matches))
     );
   };

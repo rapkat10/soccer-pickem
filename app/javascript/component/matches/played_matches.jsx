@@ -7,7 +7,7 @@ class PlayedMatches extends React.Component {
   }
 
   componentDidMount() {
-    this.props.getPlayedMatches('played_matches');
+    this.props.getPlayedMatches('played_matches', this.props.currentUser.id);
   }
 
   render() {
@@ -23,7 +23,7 @@ class PlayedMatches extends React.Component {
             </div>
             <div className="d-flex flex-column border border-info rounded">
               <div className="d-flex justify-content-center">
-                <h5>There are no played matches yet!</h5>
+                <h5>You don't have any played matches yet!</h5>
               </div>
               {matchesList}
             </div>
